@@ -50,10 +50,10 @@ userRouter.post('/signin', expressAsyncHandler(async (req, res)=>{
     })
 );
 userRouter.get('/:id', expressAsyncHandler(async (req, res) =>{
-    const user = await User.findById(req.params._id);
+    const user = await User.findById(req.params.id);
     if (user) {
         res.send(user);
-    }else{
+    } else {
         res.status(404).send( { message: 'Utilisateur Non Trouvé'});
         }
     })
